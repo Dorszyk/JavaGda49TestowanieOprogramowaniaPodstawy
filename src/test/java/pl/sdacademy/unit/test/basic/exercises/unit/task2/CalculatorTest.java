@@ -2,11 +2,7 @@ package pl.sdacademy.unit.test.basic.exercises.unit.task2;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pl.sdacademy.unit.test.basic.exercises.unit.task1.StringUtil;
 
-import static java.lang.Integer.sum;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
 
@@ -26,13 +22,11 @@ class CalculatorTest {
     void mnozTest() {
         Assertions.assertEquals(8, calc.multiply(2, 4));
     }
-    
+
     @Test
     void dzielTest() {
         Assertions.assertEquals(2, calc.divide(8, 4));
     }
-
-
 
 
 }
