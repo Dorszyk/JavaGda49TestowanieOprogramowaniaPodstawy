@@ -31,7 +31,7 @@ class CalculatorWithExceptionTest {
     }
 
     @Test
-    void shuldThrowExceptionIfSecondNumberIsEqualToZero(){
+    void shouldThrowExceptionIfSecondNumberIsEqualToZero(){
         //junit5
         assertThrows(ArithmeticException.class, () -> calculator.divide(2,0),"Cannot divide by zero!" );
         //assertj
