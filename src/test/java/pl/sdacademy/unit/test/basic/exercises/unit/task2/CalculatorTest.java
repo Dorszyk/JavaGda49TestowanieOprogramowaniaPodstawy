@@ -1,32 +1,52 @@
 package pl.sdacademy.unit.test.basic.exercises.unit.task2;
 
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CalculatorTest {
+    private static Calculator calculator;
 
-    final Calculator calc = new Calculator();
-
-    @Test
-    void sumTest() {
-        Assertions.assertEquals(4, calc.add(2, 2));
+    @BeforeAll
+    static void init() {
+        calculator = new Calculator();
     }
 
     @Test
-    void minusTest() {
-        Assertions.assertEquals(0, calc.subtract(2, 2));
+    void shouldAddTwoValues() {
+        //when
+        int result = calculator.add(1, 2);
+        //then
+        assertEquals(3, result);
+        assertThat(result).isEqualTo(3);
     }
 
     @Test
-    void mnozTest() {
-        Assertions.assertEquals(8, calc.multiply(2, 4));
+    void shouldSubtractTwoValues() {
+        //when
+        int result = calculator.subtract(1, 2);
+        //then
+        assertEquals(-1, result);
+        assertThat(result).isEqualTo(-1);
     }
 
     @Test
-    void dzielTest() {
-        Assertions.assertEquals(2, calc.divide(8, 4));
+    void shouldMultiplyTwoValues() {
+        //when
+        int result = calculator.multiply(2, 3);
+        //then
+        assertEquals(6, result);
+        assertThat(result).isEqualTo(6);
     }
 
-
+    @Test
+    void shouldDivideTwoValues() {
+        //when
+        float result = calculator.divide(6, 3);
+        //then
+        assertEquals(2, result);
+        assertThat(result).isEqualTo(2);
+    }
 }
